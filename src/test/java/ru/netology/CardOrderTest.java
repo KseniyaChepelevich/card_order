@@ -38,6 +38,8 @@ class CardOrderTest {
 
     @Test
     public void shouldSendForm() {
+
         driver.get("http://localhost:9999");
+        System.out.println("");
     }
 }
