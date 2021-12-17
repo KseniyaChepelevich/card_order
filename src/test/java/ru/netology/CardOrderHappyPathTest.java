@@ -75,6 +75,30 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
+    public void shouldSendTheCompletedFormWith1LetterName() throws InterruptedException {
+        driver.get("http://localhost:9999/");
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Р Я");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79936455555");
+        driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
+        driver.findElement(By.cssSelector("button")).click();
+        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
+        String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
+        assertEquals(expected, text);
+    }
+
+    @Test
+    public void shouldSendTheCompletedFormWithOnlyNameWithNonAlphabeticCharacters() throws InterruptedException {
+        driver.get("http://localhost:9999/");
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иван");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+59365456611");
+        driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
+        driver.findElement(By.cssSelector("button")).click();
+        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
+        String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
+        assertEquals(expected, text);
+    }
+
+    @Test
     public void shouldSendTheCompletedFormWithHyphenatedName() throws InterruptedException {
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванова Анна-Мария");
@@ -175,6 +199,18 @@ public class CardOrderHappyPathTest {
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+02226455866");
+        driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
+        driver.findElement(By.cssSelector("button")).click();
+        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
+        String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
+        assertEquals(expected, text);
+    }
+
+    @Test
+    public void shouldSendTheCompletedFormPhoneNumberWithTheSameDigits() throws InterruptedException {
+        driver.get("http://localhost:9999/");
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов-Петров Василий-Иван");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+99999999999");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.cssSelector("button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
