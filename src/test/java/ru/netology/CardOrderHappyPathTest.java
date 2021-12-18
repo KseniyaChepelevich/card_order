@@ -29,6 +29,7 @@ public class CardOrderHappyPathTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
+        driver.get("http://localhost:9999/");
 
     }
 
@@ -41,7 +42,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendForm() throws InterruptedException {
+    public void shouldSendForm()  {
         driver.get("http://localhost:9999/");
         System.out.println("");
 
@@ -49,8 +50,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedForm() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedForm()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Васильева Анна");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79258886611");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -63,8 +64,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWith2LetterName() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormWith2LetterName()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Ру Ян");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79936455555");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -75,8 +76,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWith1LetterName() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormWith1LetterName()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Р Я");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79936455555");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -87,8 +88,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWithOnlyNameWithNonAlphabeticCharacters() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormWithOnlyNameWithNonAlphabeticCharacters()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иван");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+59365456611");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -99,8 +100,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWithHyphenatedName() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormWithHyphenatedName()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванова Анна-Мария");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79996448822");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -111,8 +112,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWithSurnameHyphenated() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormWithSurnameHyphenated()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов-Петров Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+78656448822");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -123,8 +124,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWithSurnameAndNameHyphenated() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormWithSurnameAndNameHyphenated()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов-Петров Василий-Иван");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+72226455866");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -135,8 +136,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWithSurnameAndName1Later() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormWithSurnameAndName1Later()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("И И");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+72226455866");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -147,8 +148,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberFor8() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormPhoneNumberFor8()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+82226455866");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -159,8 +160,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberFor9() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormPhoneNumberFor9()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+92226455866");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -171,8 +172,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberFor3() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormPhoneNumberFor3()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+32226455866");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -183,8 +184,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberFor1() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormPhoneNumberFor1()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+12226455866");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -195,8 +196,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberFor0() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormPhoneNumberFor0()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+02226455866");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -207,8 +208,8 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberWithTheSameDigits() throws InterruptedException {
-        driver.get("http://localhost:9999/");
+    public void shouldSendTheCompletedFormPhoneNumberWithTheSameDigits()  {
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов-Петров Василий-Иван");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+99999999999");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
