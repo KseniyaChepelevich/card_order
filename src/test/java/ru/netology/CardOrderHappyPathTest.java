@@ -42,7 +42,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendForm()  {
+    public void shouldSendForm() {
         driver.get("http://localhost:9999/");
         System.out.println("");
 
@@ -50,7 +50,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedForm()  {
+    public void shouldSendTheCompletedForm() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Васильева Анна");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79258886611");
@@ -64,7 +64,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWith2LetterName()  {
+    public void shouldSendTheCompletedFormWith2LetterName() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Ру Ян");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79936455555");
@@ -76,7 +76,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWith1LetterName()  {
+    public void shouldSendTheCompletedFormWith1LetterName() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Р Я");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79936455555");
@@ -88,7 +88,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWithOnlyNameWithNonAlphabeticCharacters()  {
+    public void shouldSendTheCompletedFormWithOnlyNameWithNonAlphabeticCharacters() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иван");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+59365456611");
@@ -100,7 +100,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWithHyphenatedName()  {
+    public void shouldSendTheCompletedFormWithHyphenatedName() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванова Анна-Мария");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79996448822");
@@ -112,7 +112,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWithSurnameHyphenated()  {
+    public void shouldSendTheCompletedFormWithSurnameHyphenated() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов-Петров Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+78656448822");
@@ -124,7 +124,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWithSurnameAndNameHyphenated()  {
+    public void shouldSendTheCompletedFormWithSurnameAndNameHyphenated() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов-Петров Василий-Иван");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+72226455866");
@@ -136,7 +136,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormWithSurnameAndName1Later()  {
+    public void shouldSendTheCompletedFormWithSurnameAndName1Later() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("И И");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+72226455866");
@@ -148,7 +148,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberFor8()  {
+    public void shouldSendTheCompletedFormPhoneNumberFor8() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+82226455866");
@@ -160,7 +160,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberFor9()  {
+    public void shouldSendTheCompletedFormPhoneNumberFor9() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+92226455866");
@@ -172,7 +172,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberFor3()  {
+    public void shouldSendTheCompletedFormPhoneNumberFor3() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+32226455866");
@@ -184,7 +184,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberFor1()  {
+    public void shouldSendTheCompletedFormPhoneNumberFor1() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+12226455866");
@@ -196,7 +196,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberFor0()  {
+    public void shouldSendTheCompletedFormPhoneNumberFor0() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+02226455866");
@@ -208,7 +208,7 @@ public class CardOrderHappyPathTest {
     }
 
     @Test
-    public void shouldSendTheCompletedFormPhoneNumberWithTheSameDigits()  {
+    public void shouldSendTheCompletedFormPhoneNumberWithTheSameDigits() {
 
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов-Петров Василий-Иван");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+99999999999");
